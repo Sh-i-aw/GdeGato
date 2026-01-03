@@ -6,3 +6,9 @@ export type NavOptionProps = {
 export type NavBarProps = {
     options: NavOptionProps[]
 }
+
+export type CatCardProps = {
+    catName: string,
+    imageLink: string,
+    description: string,
+}

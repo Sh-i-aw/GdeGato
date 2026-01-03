@@ -6,9 +6,12 @@ export default function Home() {
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
 
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight dark:text-zinc-50">
-            With love and kittens in Vedado
-          </h1>
+          <h2 className="max-w-xs text-3xl font-semibold tracking-tight">
+            With love and kittens
+          </h2>
+          <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight">
+            From Vedado, Havana
+          </h2>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
