@@ -19,7 +19,7 @@ export default function CatCard({imageLink, catName, description}: CatCardProps)
                     />
                 </div>
 
-                <p className="mt-4 text-center text-slate-600 font-medium">
+                <p className="mt-4 text-center text-slate-700 font-medium">
                     {catName}
                 </p>
             </div>
