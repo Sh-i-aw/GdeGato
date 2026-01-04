@@ -31,16 +31,18 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
         <div className="min-h-screen bg-[#003312dd] font-sans text-[#f6e0ae] flex flex-col">
-            <NavBar
-                options={[
-                    {title: 'Home', link: './'},
-                    {title: 'Menu', link: './menu'},
-                    {title: 'Meet The Kitties', link: './meetTheKitties'},
-                    {title: 'Contact Us', link: './contactUs'},
-                ]}
-            />
+            <div className="sticky top-0">
+                <NavBar
+                    options={[
+                        {title: 'Home', link: './'},
+                        {title: 'Menu', link: './menu'},
+                        {title: 'Meet The Kitties', link: './meetTheKitties'},
+                        {title: 'Contact Us', link: './contactUs'},
+                    ]}
+                />
+            </div>
             <PageTransition>
-                {children}
+                    {children}
             </PageTransition>
         </div>
         </body>
