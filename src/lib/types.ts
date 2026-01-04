@@ -23,3 +23,9 @@ export type ContactSectionProps = {
     content: string,
     link?: string
 }
+
+export type InstagramTileProps = {
+    imageLink: string,
+    src: string,
+    description: string,
+}
