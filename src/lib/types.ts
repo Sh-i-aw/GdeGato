@@ -18,10 +18,15 @@ export type CatCardProps = {
 
 export type IconType = ComponentType<LucideProps>;
 
-export type ContactSectionProps = {
+export type ContactElementProps = {
     icon: IconType,
     content: string,
     link?: string
+}
+
+export type ContactSectionProps = {
+    contactInfo: ContactElementProps[]
+    className?: string
 }
 
 export type InstagramTileProps = {

@@ -4,5 +4,18 @@
     "menuPageTitle": "Menu",
     "catPageTitle": "Meet The Kitties",
     "contactPageTitle": "Contact Us"
+  },
+  "Home": {
+    "bannerText1": "With love and kittens",
+    "bannerText2": "From Vedado, Havana",
+    "instaFollowText": "Follow Us on Instagram"
+  },
+  "Contact": {
+    "header": "Come Visit Us : )",
+    "openHoursText": "open daily 10am - 9pm",
+    "closingHoursText": "Closed Dec 30, 31st"
+  },
+  "Footer": {
+    "openingHours": "daily 10am -9pm"
   }
 }
