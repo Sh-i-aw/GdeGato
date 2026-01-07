@@ -4,8 +4,11 @@ import {instagramTiles} from "@/lib/instagramTiles";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {useEffect, useRef, useState} from "react";
+import { useTranslations } from "next-intl";
 
 export default function InstagramCarousel () {
+    const t = useTranslations()
+
     const scrollerRef = useRef<HTMLDivElement | null> (null)
     const [canLeft, setCanLeft] = useState(false)
     const [canRight, setCanRight] = useState(true)
@@ -54,7 +57,7 @@ export default function InstagramCarousel () {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Follow Us on Instagram @g_de_gato
+                {t('Home.instaFollowText')} @g_de_gato
             </a>
 
 

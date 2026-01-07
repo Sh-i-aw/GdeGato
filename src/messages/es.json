@@ -1,0 +1,21 @@
+{
+  "Nav": {
+    "homePageTitle": "Inicio",
+    "menuPageTitle": "Menú",
+    "catPageTitle": "Los Gatitos",
+    "contactPageTitle": "Contacto"
+  },
+  "Home": {
+    "bannerText1": "Con amor y gatitos",
+    "bannerText2": "Desde El Vedado, La Habana",
+    "instaFollowText": "Síguenos en Instagram"
+  },
+  "Contact": {
+    "header": "¡Ven a visitarnos! : )",
+    "openHoursText": "Abierto todos los días de 10:00 a 21:00",
+    "closingHoursText": "Cerrado el 30 y 31 de diciembre"
+  },
+  "Footer": {
+    "openingHours": "todos los días de 10:00 a 21:00"
+  }
+}
