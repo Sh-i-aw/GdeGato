@@ -41,7 +41,7 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
             <NextIntlClientProvider>
-                <div className="min-h-screen w-full bg-[#295239] font-sans text-[#f6e0ae] flex flex-col">
+                <div className="min-h-screen w-full h-full bg-[#295239] font-sans text-[#f6e0ae] flex flex-col">
                     <div className="sticky top-0">
                         <NavBar
                             options={NavBarOptions}

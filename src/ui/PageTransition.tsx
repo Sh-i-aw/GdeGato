@@ -8,7 +8,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
     return (
         <div
             key={pathname}
-            className="pageFadeInUp"
+            className="pageFadeInUp flex-1 flex"
         >
             {children}
         </div>
