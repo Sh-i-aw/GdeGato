@@ -5,6 +5,7 @@ import NavOption from "@/ui/NavOption";
 import { NavBarProps } from "@/lib/types";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { Languages } from "lucide-react"
 
 export default function NavBar(options: NavBarProps) {
   const locale = useLocale();
@@ -46,9 +47,9 @@ export default function NavBar(options: NavBarProps) {
         ))}
         <button
           onClick={handleLocaleSwitch}
-          className="px-4 py-0.5 rounded-xl hover:shadow-md transition-shadow text-sm font-medium border-0"
-          style={{ backgroundColor: "#f6e0ae", color: "#003312" }}
+          className="flex items-center gap-2 px-3 py-1 rounded-2xl ring-1 ring-amber-100/25 shadow-sm shadow-black/10 hover:ring-amber-100/40 hover:shadow-md hover:bg-amber-100/20 transition"
         >
+          <Languages className="mt-0.5 h-4 w-4 shrink-0"/>
           {nextLocale === "es" ? "ES" : "EN"}
         </button>
       </div>
