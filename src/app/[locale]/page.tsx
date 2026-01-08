@@ -1,23 +1,21 @@
 import InstagramCarousel from "@/ui/InstagramCarousel";
 import Footer from "@/ui/Footer";
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
+import { VideoBanner } from "@/ui/VideoBanner";
 
 export default function Home() {
-  const t = useTranslations()
+  const t = useTranslations();
   return (
-    <div className="flex flex-1 items-center justify-center">
-      <main className="flex w-full flex-col items-center py-32 gap-40 sm:items-start">
-
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left px-30">
-          <h2 className="text-3xl font-semibold tracking-tight">
-            {t('Home.bannerText1')}
-          </h2>
-          <h2 className="text-3xl font-semibold leading-10 tracking-tight">
-            {t('Home.bannerText2')}
-          </h2>
-        </div>
+    <div className="flex flex-1 items-center justify-center w-full max-w-full overflow-x-hidden">
+      <main className="flex w-full max-w-full flex-col sm:items-start">
+        <VideoBanner />
+          <div className="flex items-center py-60 text-3xl">
+              <p>
+                  Other content like promotion, highlights from menu, short bio of the store
+              </p>
+          </div>
         <InstagramCarousel/>
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

@@ -17,5 +17,9 @@
   },
   "Footer": {
     "openingHours": "todos los días de 10:00 a 21:00"
+  },
+  "Banner": {
+    "seeOurMenu": "Ver Nuestro Menú",
+    "meetTheKitties": "Conoce a Los Gatitos"
   }
 }
