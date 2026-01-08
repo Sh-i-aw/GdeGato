@@ -17,5 +17,9 @@
   },
   "Footer": {
     "openingHours": "daily 10am -9pm"
+  },
+  "Banner": {
+    "seeOurMenu": "See Our Menu",
+    "meetTheKitties": "Meet the Kitties"
   }
 }

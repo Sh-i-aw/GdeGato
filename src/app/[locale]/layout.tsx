@@ -3,8 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/ui/NavBar";
 import PageTransition from "@/ui/PageTransition";
-import {NextIntlClientProvider, useTranslations} from "next-intl";
-
+import { NextIntlClientProvider, useTranslations } from "next-intl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,33 +25,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const t = useTranslations();
 
-    const t = useTranslations()
-
-    const NavBarOptions = [
-        {title: t('Nav.homePageTitle'), link: './'},
-        {title: t('Nav.menuPageTitle'), link: './menu'},
-        {title: t('Nav.catPageTitle'), link: './meetTheKitties'},
-        {title: t('Nav.contactPageTitle'), link: './contactUs'},
-    ]
-    return (
-        <html lang="en">
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-            <NextIntlClientProvider>
-                <div className="min-h-screen w-full bg-[#295239] font-sans text-[#f6e0ae] flex flex-col">
-                    <div className="sticky top-0">
-                        <NavBar
-                            options={NavBarOptions}
-                        />
-                    </div>
-                    <PageTransition>
-                            {children}
-                    </PageTransition>
-                </div>
-            </NextIntlClientProvider>
-        </body>
-        </html>
-    );
+  const NavBarOptions = [
+    { title: t("Nav.homePageTitle"), link: "./" },
+    { title: t("Nav.menuPageTitle"), link: "./menu" },
+    { title: t("Nav.catPageTitle"), link: "./meetTheKitties" },
+    { title: t("Nav.contactPageTitle"), link: "./contactUs" },
+  ];
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+      >
+        <NextIntlClientProvider>
+          <div className="min-h-screen w-full h-full max-w-full bg-[#295239] font-sans text-[#f6e0ae] flex flex-col overflow-x-hidden">
+            <div className="sticky top-0 z-10">
+              <NavBar options={NavBarOptions} />
+            </div>
+            <PageTransition>{children}</PageTransition>
+          </div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
 }
