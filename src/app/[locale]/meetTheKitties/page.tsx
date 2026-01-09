@@ -1,5 +1,8 @@
+"use client"
+
 import CatCard from "@/ui/CatCard";
 import {CatCardProps} from "@/lib/types";
+import {useState} from "react";
 
 export default function KittiesPage() {
     const cats: CatCardProps[] = [
@@ -7,8 +10,9 @@ export default function KittiesPage() {
         {catName: "Timoteo", imageLink:"/cats/timoteo.png", description: 'Sweetest boy alive'},
         {catName: "Victor", imageLink:"/cats/victor.jpeg", description: 'More refreshing than oranges'},
     ]
+    const [selectedCat, setSelectedCat] = useState<CatCardProps>(cats[0])
     return (
-        <main className="flex-1 flex flex-col gap-6 items-center">
+        <main className="flex-1 flex flex-col w-full gap-6 p-10 items-center">
             <h1 className="text-3xl mt-5 font-semibold">Los Gatos</h1>
             <div className="flex flex-wrap w-full justify-evenly">
                 {
@@ -21,6 +25,17 @@ export default function KittiesPage() {
                         )
                     )
                 }
+            </div>
+            <div
+             className="bg-white/50 w-full h-80 rounded-md"
+            >
+                <p>
+                    Name: {selectedCat.catName}
+                </p>
+                <p>
+                    {selectedCat.description}
+                </p>
+
             </div>
         </main>
     );
