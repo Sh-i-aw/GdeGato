@@ -2,6 +2,7 @@ import InstagramCarousel from "@/ui/InstagramCarousel";
 import Footer from "@/ui/Footer";
 import { useTranslations } from "next-intl";
 import { VideoBanner } from "@/ui/VideoBanner";
+import CatLoader from "@/ui/CatLoader";
 
 export default function Home() {
   const t = useTranslations();
@@ -9,7 +10,11 @@ export default function Home() {
     <div className="flex flex-1 items-center justify-center w-full max-w-full overflow-x-hidden">
       <main className="flex w-full max-w-full flex-col sm:items-start">
         <VideoBanner />
+          <div className="flex w-full items-center justify-center py-60 text-3xl">
+              <CatLoader/>
+          </div>
           <div className="flex items-center py-60 text-3xl">
+
               <p>
                   Other content like promotion, highlights from menu, short bio of the store
               </p>
