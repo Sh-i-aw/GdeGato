@@ -13,6 +13,7 @@ export type NavBarProps = {
 export type CatCardProps = {
     catName: string,
     imageLink: string,
+    styles?: string,
     description: string,
 }
 
