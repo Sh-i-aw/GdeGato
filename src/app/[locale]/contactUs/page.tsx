@@ -16,7 +16,7 @@ export default function ContactPage() {
       <main className="flex-1 flex flex-wrap h-fit justify-center p-10 mt-10">
           {/* google map embed */}
           <div
-              className="overflow-hidden w-2/5 rounded-2xl shadow-lg ring-1 ring-black/10"
+              className="overflow-hidden w-2/5 sm:w-3/5 rounded-2xl shadow-lg ring-1 ring-black/10"
           >
               <iframe
                   aria-label="google map embed"
