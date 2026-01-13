@@ -10,6 +10,9 @@
     "bannerText2": "Desde El Vedado, La Habana",
     "instaFollowText": "Síguenos en Instagram"
   },
+  "CatPage" : {
+    "header": "Nuestros gatitos"
+  },
   "Contact": {
     "header": "¡Ven a visitarnos! : )",
     "openHoursText": "Abierto todos los días de 10:00 a 21:00",

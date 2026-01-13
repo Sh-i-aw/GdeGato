@@ -2,11 +2,14 @@ import Image from "next/image";
 import {CatCardProps} from "@/lib/types";
 
 
-export default function CatCard({imageLink, catName, styles}: CatCardProps) {
+export default function CatCard({imageLink, catName, styles, onClick}: CatCardProps) {
     return (
-        <div className={`bg-white p-3 pb-10 shadow-xl shadow-black/80 ${styles || ''}`}>
+        <div
+            className={`bg-white p-3 pb-10 shadow-xl shadow-black/80 transform-gpu transition-transform duration-300 ${styles || ''}`}
+            onClick={onClick}
+        >
             {/* Photo window */}
-            <div className="relative w-72 h-72 mt-2 overflow-hidden">
+            <div className="relative w-72 h-72 mt-2 overflow-hidden pointer-events-none">
                 <Image
                     src={imageLink}
                     alt={`${catName} picture`}
