@@ -44,7 +44,7 @@ export function VideoBanner() {
                   <BannerButton
                       key={`bannerButton${index}`}
                       title={button.title}
-                      link={'button.link'}
+                      link={button.link}
                   />
               ))}
           </div>
