@@ -5,9 +5,10 @@ import NavOption from "@/ui/NavOption";
 import { NavBarProps } from "@/lib/types";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Languages, Menu } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
+import LanguageButton from "@/ui/nav/languageBtn";
 
 export default function NavBar(options: NavBarProps) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
@@ -52,13 +53,10 @@ export default function NavBar(options: NavBarProps) {
               link={option.link}
             />
           ))}
-          <button
-            onClick={handleLocaleSwitch}
-            className="flex items-center gap-2 px-3 py-1 rounded-2xl ring-1 ring-amber-100/25 shadow-sm shadow-black/10 hover:ring-amber-100/40 hover:shadow-md hover:bg-amber-100/20 transition"
-          >
-            <Languages className="mt-0.5 h-4 w-4 shrink-0" />
-            {nextLocale === "es" ? "ES" : "EN"}
-          </button>
+          <LanguageButton
+              nextLocale={nextLocale}
+              localeSwitch={handleLocaleSwitch}
+          />
         </div>
 
         {/* Mobile Nav Icon */}
@@ -79,7 +77,7 @@ export default function NavBar(options: NavBarProps) {
         openDrawer &&
         createPortal(
           <div
-            className={`fixed inset-0 z-[9999] sm:hidden ${openDrawer ? "pointer-events-auto" : "pointer-events-none"}`}
+            className={`fixed inset-0 z-9999 sm:hidden ${openDrawer ? "pointer-events-auto" : "pointer-events-none"}`}
           >
             {/* Background Overlay, click to close nav */}
             <div
@@ -88,10 +86,10 @@ export default function NavBar(options: NavBarProps) {
             />
             {/* Drawer Panel */}
             <div
-              className={`absolute right-0 top-0 h-full w-72 bg-[#003312] shadow-2xl transition-transform duration-200 ${openDrawer ? "translate-x-0" : "translate-x-full"}`}
+              className={`absolute right-0 top-0 h-full w-52 bg-[#003312] shadow-2xl transition-transform duration-500 ${openDrawer ? "translate-x-0" : "translate-x-full"}`}
             >
-              <div className="flex flex-col p-6 gap-4">
-                <div>
+              <div className="flex flex-col h-full p-6 justify-between">
+                <div className="flex flex-col gap-4">
                   {options.options.map((option, index) => (
                       <NavOption
                           key={`mobileNavOptions${index}`}
@@ -100,14 +98,13 @@ export default function NavBar(options: NavBarProps) {
                       />
                   ))}
                 </div>
+                <div>
+                  <LanguageButton
+                      nextLocale={nextLocale}
+                      localeSwitch={handleLocaleSwitch}
+                  />
+                </div>
 
-                <button
-                  onClick={handleLocaleSwitch}
-                  className="flex items-center gap-2 px-3 py-1 rounded-2xl ring-1 ring-amber-100/25 shadow-sm shadow-black/10 hover:ring-amber-100/40 hover:shadow-md hover:bg-amber-100/20 transition"
-                >
-                  <Languages className="mt-0.5 h-4 w-4 shrink-0" />
-                  {nextLocale === "es" ? "ES" : "EN"}
-                </button>
               </div>
             </div>
           </div>,
