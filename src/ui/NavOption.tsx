@@ -6,7 +6,7 @@ export default function NavOption ({title, link}: NavOptionProps)
         return (
             <>
                 <Link
-                    className="flex items-center text-lg text-[#F5E3AF] uppercase"
+                    className="flex items-center text-md sm:text-lg text-[#F5E3AF] uppercase"
                     href={link}
                     rel="noopener noreferrer"
                 >
