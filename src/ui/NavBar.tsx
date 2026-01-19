@@ -95,6 +95,7 @@ export default function NavBar(options: NavBarProps) {
                           key={`mobileNavOptions${index}`}
                           title={option.title}
                           link={option.link}
+                          onCloseDrawer={() => setOpenDrawer(false)}
                       />
                   ))}
                 </div>
