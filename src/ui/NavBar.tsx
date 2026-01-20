@@ -6,12 +6,17 @@ import { NavBarProps } from "@/lib/types";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import LanguageButton from "@/ui/nav/languageBtn";
 
 export default function NavBar(options: NavBarProps) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -61,10 +66,7 @@ export default function NavBar(options: NavBarProps) {
 
         {/* Mobile Nav Icon */}
         <button
-          onClick={() => {
-            setOpenDrawer(true);
-            console.log(openDrawer);
-          }}
+          onClick={() => setOpenDrawer(true)}
           className="sm:hidden p-2 rounded-xl hover:bg-amber-100/20 transition"
           aria-label="open menu"
         >
@@ -73,19 +75,20 @@ export default function NavBar(options: NavBarProps) {
       </div>
 
       {/* Mobile Drawer - Rendered via Portal at body level to escape stacking contexts */}
-      {openDrawer &&
+      {isMounted &&
         createPortal(
           <div
             className={`fixed inset-0 z-9999 sm:hidden ${openDrawer ? "pointer-events-auto" : "pointer-events-none"}`}
           >
             {/* Background Overlay, click to close nav */}
             <div
-              className={`absolute inset-0 bg-black/40 transition-opacity ${openDrawer ? "opacity-100" : "opacity-0"}`}
+              className={`absolute inset-0 bg-black/40 transition-opacity duration-200 ${openDrawer ? "opacity-100" : "opacity-0"}`}
               onClick={() => setOpenDrawer(false)}
             />
             {/* Drawer Panel */}
             <div
-              className={`absolute right-0 top-0 h-full w-52 bg-[#003312] shadow-2xl transition-transform duration-500 ${openDrawer ? "translate-x-0" : "translate-x-full"}`}
+              className={`absolute right-0 top-0 h-full w-52 bg-[#003312] shadow-2xl transition-transform duration-200 ease-out ${openDrawer ? "translate-x-0" : "translate-x-full"}`}
+              aria-hidden={!openDrawer}
             >
               <div className="flex flex-col h-full p-6 justify-between">
                 <div className="flex flex-col gap-4">

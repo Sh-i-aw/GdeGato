@@ -14,7 +14,7 @@ export default function ContactPage() {
         {icon: Instagram, content: "@g_de_gato_", link:"https://www.instagram.com/g_de_gato_/"},
     ]
     return (
-      <main className="flex-1 flex flex-wrap h-fit justify-center p-10 sm:mt-10">
+      <main className="flex-1 flex flex-wrap h-fit justify-center p-6 sm:p-10 sm:mt-10">
           {/* google map embed */}
           <div
               className="overflow-hidden mb-10 sm:mx-10 pw-4/5 sm:w-3/5 sm:max-w-150 rounded-lg sm:rounded-2xl shadow-lg ring-1 ring-black/10"
