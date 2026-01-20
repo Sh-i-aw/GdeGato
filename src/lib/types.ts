@@ -4,6 +4,7 @@ import type { LucideProps } from "lucide-react";
 export type NavOptionProps = {
     title: string,
     link: string,
+    onCloseDrawer?: () => void,
 }
 
 export type NavBarProps = {
@@ -13,7 +14,9 @@ export type NavBarProps = {
 export type CatCardProps = {
     catName: string,
     imageLink: string,
-    description: string,
+    description?: string
+    styles?: string,
+    onClick?: () => void,
 }
 
 export type IconType = ComponentType<LucideProps>;

@@ -5,22 +5,24 @@ export default function ContactElement({ icon: Icon, content, link }: ContactEle
     // optionally render row as an <a> tag if it's email or phone
 
     return (
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-2 sm:gap-3">
 
-            <Icon className="mt-0.5 h-5 w-5 shrink-0" />
+            <Icon className="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
 
             <Element
                 {...(link
-                    ? {
+                    && {
                         href: link,
                         target: "_blank",
                         rel: "noreferrer",
                         className:
-                            "text-base underline underline-offset-6 hover:text-white/80 break-words",
+                            "underline underline-offset-6 hover:text-white/80",
                     }
-                    : { className: "text-base break-words" })}
+                )}
             >
-                {content}
+                <div className="text-sm sm:text-base wrap-break-word">
+                    {content}
+                </div>
             </Element>
         </div>
     );

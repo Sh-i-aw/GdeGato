@@ -1,14 +1,15 @@
 import {NavOptionProps} from "@/lib/types";
 import {Link} from '@/i18n/navigation';
 
-export default function NavOption ({title, link}: NavOptionProps)
+export default function NavOption ({title, link, onCloseDrawer}: NavOptionProps)
 {
         return (
             <>
                 <Link
-                    className="flex items-center text-lg uppercase"
+                    className="flex items-center text-md sm:text-lg text-[#F5E3AF] uppercase"
                     href={link}
                     rel="noopener noreferrer"
+                    onClick={onCloseDrawer}
                 >
                     {title}
                 </Link>

@@ -21,7 +21,7 @@ export default function Footer() {
                 />
 
                 <div className="pt-8 text-center text-sm opacity-80">
-                    © {new Date().getFullYear()} G de Gato
+                    © {2025} G de Gato
                 </div>
             </div>
         </footer>
