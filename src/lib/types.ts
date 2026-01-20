@@ -4,6 +4,7 @@ import type { LucideProps } from "lucide-react";
 export type NavOptionProps = {
     title: string,
     link: string,
+    onCloseDrawer?: () => void,
 }
 
 export type NavBarProps = {
