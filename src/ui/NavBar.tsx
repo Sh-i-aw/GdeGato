@@ -34,13 +34,13 @@ export default function NavBar(options: NavBarProps) {
 
   return (
     <header className="relative">
-      <div className="flex bg-[#003312] px-4 sm:px-8 pb-2 items-center justify-between">
-        {/* TODO: make image smaller on mobile*/}
+      <div className="flex bg-[#003312] px-4 py-1 sm:py-2 sm:px-8 items-center justify-between">
         <Image
           src="/storeLogo.png"
           alt="Next.js logo"
           width={90}
           height={20}
+          className="w-13 sm:w-22 h-auto"
           priority
         />
 
@@ -54,8 +54,8 @@ export default function NavBar(options: NavBarProps) {
             />
           ))}
           <LanguageButton
-              nextLocale={nextLocale}
-              localeSwitch={handleLocaleSwitch}
+            nextLocale={nextLocale}
+            localeSwitch={handleLocaleSwitch}
           />
         </div>
 
@@ -73,8 +73,7 @@ export default function NavBar(options: NavBarProps) {
       </div>
 
       {/* Mobile Drawer - Rendered via Portal at body level to escape stacking contexts */}
-      {
-        openDrawer &&
+      {openDrawer &&
         createPortal(
           <div
             className={`fixed inset-0 z-9999 sm:hidden ${openDrawer ? "pointer-events-auto" : "pointer-events-none"}`}
@@ -91,21 +90,20 @@ export default function NavBar(options: NavBarProps) {
               <div className="flex flex-col h-full p-6 justify-between">
                 <div className="flex flex-col gap-4">
                   {options.options.map((option, index) => (
-                      <NavOption
-                          key={`mobileNavOptions${index}`}
-                          title={option.title}
-                          link={option.link}
-                          onCloseDrawer={() => setOpenDrawer(false)}
-                      />
+                    <NavOption
+                      key={`mobileNavOptions${index}`}
+                      title={option.title}
+                      link={option.link}
+                      onCloseDrawer={() => setOpenDrawer(false)}
+                    />
                   ))}
                 </div>
                 <div>
                   <LanguageButton
-                      nextLocale={nextLocale}
-                      localeSwitch={handleLocaleSwitch}
+                    nextLocale={nextLocale}
+                    localeSwitch={handleLocaleSwitch}
                   />
                 </div>
-
               </div>
             </div>
           </div>,

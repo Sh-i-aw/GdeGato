@@ -8,8 +8,8 @@ export default function ContactSection (
     const t = useTranslations()
 
     return (
-        <div className={`flex flex-col lg:w-2/5 px-10 p-2 ${className ?? ""}`}>
-            <h2 className="font-bold text-lg"> {t('Contact.header')} </h2>
+        <div className={`w-full flex flex-col pl-2 lg:w-2/5 ${className ?? ""}`}>
+            <h2 className="font-bold text-md sm:text-lg"> {t('Contact.header')} </h2>
             {
                 contactInfo.map((section, index) => (
                     <ContactElement
