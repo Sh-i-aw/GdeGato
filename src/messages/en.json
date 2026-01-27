@@ -10,6 +10,9 @@
     "bannerText2": "From Vedado, Havana",
     "instaFollowText": "Follow Us on Instagram"
   },
+  "Menu" : {
+    "priceText": "All menu item prices are in Cuban Pesos."
+  },
   "CatPage" : {
     "header": "Out Cats"
   },

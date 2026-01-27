@@ -10,6 +10,9 @@
     "bannerText2": "Desde El Vedado, La Habana",
     "instaFollowText": "Síguenos en Instagram"
   },
+  "Menu" : {
+    "priceText": "Todos los precios del menú están en pesos cubanos."
+  },
   "CatPage" : {
     "header": "Nuestros gatitos"
   },
