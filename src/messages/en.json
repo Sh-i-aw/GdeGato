@@ -8,7 +8,8 @@
   "Home": {
     "bannerText1": "With love and kittens",
     "bannerText2": "From Vedado, Havana",
-    "instaFollowText": "Follow Us on Instagram"
+    "instaFollowText": "Follow Us on Instagram",
+    "loadingText": "We'll be right with you"
   },
   "CatPage" : {
     "header": "Out Cats"

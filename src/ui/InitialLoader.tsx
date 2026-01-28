@@ -4,30 +4,33 @@ import { useEffect, useState } from "react";
 import CatLoader from "./CatLoader";
 
 const FIRST_LOAD_KEY = "g-de-gato-first-load";
+const CAT_GIF = "/loader/catWalks.gif";
 
 export default function InitialLoader() {
   const [showLoader, setShowLoader] = useState<boolean | null>(null);
 
+  // Preload the cat gif as soon as we mount so it’s ready when CatLoader shows
   useEffect(() => {
-    // Check if this is the first visit
-    // Only access sessionStorage on client side
+    const img = new Image();
+    img.src = CAT_GIF;
+  }, []);
+
+  // Check if this is the first visit
+  // Only access sessionStorage on client side
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
     const hasVisited = sessionStorage.getItem(FIRST_LOAD_KEY);
 
     if (hasVisited) {
-      // User has visited before, assets probably cached, hide loader
       setShowLoader(false);
     } else {
-      // First visit on this tab, show loader and mark as visited
       setShowLoader(true);
       sessionStorage.setItem(FIRST_LOAD_KEY, "true");
     }
   }, []);
 
-  const handleFadeComplete = () => {
-    setShowLoader(false);
-  };
+  const handleFadeComplete = () => setShowLoader(false);
 
   // Show blocking solid color overlay while checking visit status to prevent flash
   if (showLoader === null) {
