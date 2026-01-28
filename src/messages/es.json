@@ -8,7 +8,8 @@
   "Home": {
     "bannerText1": "Con amor y gatitos",
     "bannerText2": "Desde El Vedado, La Habana",
-    "instaFollowText": "Síguenos en Instagram"
+    "instaFollowText": "Síguenos en Instagram",
+    "loadingText": "En un momentito estamos contigo"
   },
   "Menu" : {
     "priceText": "Todos los precios del menú están en pesos cubanos."
