@@ -21,12 +21,12 @@ export default function KittiesPage() {
           className={`relative size-full transition duration-1000 [transform-style:preserve-3d] ${side === "back" ? "transform-[rotateY(180deg)]" : ""}`}
         >
           {/* each side of the div has backface-hidden, since browser by default will draw the back side */}
-          <div className="absolute inset-0 size-full [backface-visibility:hidden]">
+          <div className="absolute inset-0 size-full backface-hidden">
             <div className="flex h-full w-full flex-col items-center justify-center rounded-xl border bg-red-300 text-white">
               Front
             </div>
           </div>
-          <div className="absolute inset-0 size-full [backface-visibility:hidden] transform-[rotateY(180deg)]">
+          <div className="absolute inset-0 size-full backface-hidden transform-[rotateY(180deg)]">
             <div className="flex h-full w-full flex-col items-center justify-center rounded-xl border bg-blue-700 text-white">
               Bak
             </div>

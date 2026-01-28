@@ -11,13 +11,16 @@ export type NavBarProps = {
     options: NavOptionProps[]
 }
 
-export type CatCardProps = {
-    catName: string,
-    imageLink: string,
-    description?: string
-    styles?: string,
-    onClick?: () => void,
-}
+export type Cat = {
+    catName: string;
+    imageLink: string;
+    description?: string;
+};
+
+export type CatCardProps = Cat & {
+    styles?: string;
+    onClick: () => void;
+};
 
 export type IconType = ComponentType<LucideProps>;
 

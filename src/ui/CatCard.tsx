@@ -7,8 +7,8 @@ import { CatCardProps } from "@/lib/types";
 type Side = "front" | "back";
 
 export default function CatCard({
-  imageLink,
   catName,
+  imageLink,
   description,
   styles,
   onClick,
@@ -24,18 +24,18 @@ export default function CatCard({
     <button
       type="button"
       onClick={handleClick}
-      className={`outline-none perspective-[1200px] w-full max-w-[312px] min-h-[380px] cursor-pointer ${styles ?? ""}`}
+      className={`outline-none perspective-distant w-full max-w-78 min-h-95 cursor-pointer ${styles ?? ""}`}
       aria-label={side === "front" ? `View ${catName} bio` : `Flip back to ${catName} photo`}
     >
       <div
-        className={`relative w-full h-full min-h-[380px] transition-transform duration-500 [transform-style:preserve-3d] ${side === "back" ? "transform-[rotateY(180deg)]" : ""}`}
+        className={`relative w-full h-full min-h-95 transition-transform duration-500 transform-3d ${side === "back" ? "transform-[rotateY(180deg)]" : ""}`}
       >
         {/* Front: polaroid */}
-        <div className="absolute inset-0 w-full min-h-[380px] [backface-visibility:hidden] overflow-hidden">
+        <div className="absolute inset-0 w-full min-h-95 backface-hidden overflow-hidden">
           <div
             className="bg-white p-3 pb-10 shadow-xl shadow-black/80 h-full w-full min-w-0 transform-gpu overflow-hidden"
           >
-            <div className="relative w-full aspect-square max-w-[288px] max-h-[288px] mt-2 mx-auto overflow-hidden rounded-none pointer-events-none">
+            <div className="relative w-full aspect-square max-w-[288px] max-h-72 mt-2 mx-auto overflow-hidden rounded-none pointer-events-none">
               <Image
                 src={imageLink}
                 alt={`${catName} picture`}
@@ -52,7 +52,7 @@ export default function CatCard({
         </div>
 
         {/* Back: bio */}
-        <div className="absolute inset-0 w-full min-h-[380px] [backface-visibility:hidden] transform-[rotateY(180deg)]">
+        <div className="absolute inset-0 w-full min-h-95 backface-hidden transform-[rotateY(180deg)]">
           <div className="bg-white p-6 pb-10 shadow-xl shadow-black/80 h-full w-full flex flex-col justify-center text-slate-700 overflow-auto">
             <p className="text-xl font-semibold">{catName}</p>
             <p className="text-sm text-slate-500 mt-1">Birthday: Dec 2025</p>
