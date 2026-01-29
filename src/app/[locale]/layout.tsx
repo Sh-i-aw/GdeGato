@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "G de Gato",
   description: "With Love and Kittens in Vedado, Havana",
+  icons: {
+    icon: "/storeLogo.png",
+  },
 };
 
 export default function RootLayout({
