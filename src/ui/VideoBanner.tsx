@@ -1,16 +1,16 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import {Link} from '@/i18n/navigation';
-import {NavOptionProps} from "@/lib/types";
+import { Link } from "@/i18n/navigation";
+import { NavOptionProps } from "@/lib/types";
 
 export function VideoBanner() {
   const t = useTranslations();
 
-  const bannerButtons: NavOptionProps[]= [
-      {title: t('Banner.seeOurMenu'), link:"./menu"},
-      {title: t('Banner.meetTheKitties'), link:"./meetTheKitties"}
-  ]
+  const bannerButtons: NavOptionProps[] = [
+    { title: t("Banner.seeOurMenu"), link: "./menu" },
+    { title: t("Banner.meetTheKitties"), link: "./meetTheKitties" },
+  ];
 
   return (
     <div className="relative w-full max-w-full max-h-140 aspect-video overflow-hidden">
@@ -24,44 +24,41 @@ export function VideoBanner() {
         poster="/insta/outdoor-croissants.png"
       >
         <source src="/video/banner.mp4" type="video/mp4" />
-        {/* Optional: add WebM first if you have it */}
+        {/* TODO: make video webm to save space*/}
         {/* <source src="/hero.webm" type="video/webm" /> */}
         Your browser does not support the video tag.
       </video>
-        <div className="absolute z-10 h-full w-full bottom-0 right-0 bg-white/30">
+        {/* transparent white mask on the video */}
+      <div className="absolute z-10 h-full w-full bottom-0 right-0 bg-white/30"></div>
 
-        </div>
-
-      <div className="absolute z-20 h-full w-full bottom-0 right-0 flex flex-col gap-6 items-center justify-center p-8 sm:p-12">
-        <h2 className="text-4xl text-white/90 font-bold tracking-tight">
+      <div className="absolute z-20 h-full w-full bottom-0 right-0 flex flex-col gap-3 sm:gap-6 items-end-safe sm:items-center justify-end-safe sm:justify-center p-4 sm:p-8 md:p-12">
+        <h2 className="text-lg sm:text-4xl text-white/90 font-bold tracking-tight">
           {t("Home.bannerText1")}
         </h2>
-        <h2 className="text-4xl text-white/90 font-bold tracking-tight">
+        <h2 className="text-lg sm:text-4xl text-white/90 font-bold tracking-tight">
           {t("Home.bannerText2")}
         </h2>
-          <div className="flex w-full p-8 justify-center gap-25">
-              {bannerButtons.map((button, index) => (
-                  <BannerButton
-                      key={`bannerButton${index}`}
-                      title={button.title}
-                      link={'button.link'}
-                  />
-              ))}
-          </div>
+        <div className="flex flex-col sm:flex-row w-full max-w-full sm:px-8 justify-center items-end-safe sm:items-center gap-3 sm:gap-6 md:gap-8">
+          {bannerButtons.map((button, index) => (
+            <BannerButton
+              key={`bannerButton${index}`}
+              title={button.title}
+              link={button.link}
+            />
+          ))}
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-function BannerButton({title, link}: NavOptionProps){
-    return (
-        <>
-            <Link
-                className="text-lg font-semibold py-2 px-4 rounded-full bg-[#f6e0aebb] text-[#295239] hover:bg-[#f6e0ae]"
-                href={link}
-            >
-                {title}
-            </Link>
-        </>
-    )
+function BannerButton({ title, link }: NavOptionProps) {
+  return (
+    <Link
+      className="text-xs sm:text-base md:text-lg font-semibold py-1 px-3 sm:py-2.5 sm:px-5 rounded-full bg-[#f6e0aebb] text-[#295239] hover:bg-[#f6e0ae] whitespace-nowrap min-w-0"
+      href={link}
+    >
+      {title}
+    </Link>
+  );
 }
