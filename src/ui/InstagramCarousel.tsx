@@ -49,10 +49,10 @@ export default function InstagramCarousel () {
     };
 
     return (
-        <div className="w-full max-w-full min-w-0 flex flex-col gap-4 text-2xl font-semibold tracking-tight bg-[#003312aa] p-10 shadow-lg shadow-white/20">
+        <div className="w-full max-w-full min-w-0 flex flex-col gap-4 font-semibold tracking-tight bg-[#003312aa] p-10 ring-1 ring-white/30 ">
 
             <a
-                className="block pb-2"
+                className="block pb-2 text-2xl"
                 href="https://www.instagram.com/g_de_gato_/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -97,7 +97,7 @@ export default function InstagramCarousel () {
                                     href={image.imageLink}
                                     rel='noreferrer'
                                     aria-label="Open Instagram Post"
-                                    className="relative block h-44 w-44 sm:h-44 sm:w-44 flex-none overflow-hidden rounded-xl ring-1 ring-white/10 hover:ring-white/30 hover:scale-[1.03] transition"
+                                    className="relative block h-44 w-44 sm:h-44 sm:w-44 flex-none overflow-hidden rounded-md ring-1 ring-white/10 hover:ring-white/30 hover:scale-[1.03] transition"
                                 >
                                     <Image
                                         src={image.src}

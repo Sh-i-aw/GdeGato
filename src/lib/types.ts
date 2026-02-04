@@ -4,17 +4,23 @@ import type { LucideProps } from "lucide-react";
 export type NavOptionProps = {
     title: string,
     link: string,
+    onCloseDrawer?: () => void,
 }
 
 export type NavBarProps = {
     options: NavOptionProps[]
 }
 
-export type CatCardProps = {
-    catName: string,
-    imageLink: string,
-    description: string,
-}
+export type Cat = {
+    catName: string;
+    imageLink: string;
+    description?: string;
+};
+
+export type CatCardProps = Cat & {
+    styles?: string;
+    onClick: () => void;
+};
 
 export type IconType = ComponentType<LucideProps>;
 

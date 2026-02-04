@@ -49,7 +49,7 @@ export function VideoBanner() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 function BannerButton({ title, link }: NavOptionProps) {

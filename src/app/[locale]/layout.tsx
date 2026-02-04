@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/ui/NavBar";
 import PageTransition from "@/ui/PageTransition";
+import InitialLoader from "@/ui/InitialLoader";
 import { NextIntlClientProvider, useTranslations } from "next-intl";
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <NextIntlClientProvider>
+          <InitialLoader />
           <div className="min-h-screen w-full h-full max-w-full bg-[#295239] font-sans text-[#f6e0ae] flex flex-col overflow-x-hidden">
             <div className="sticky top-0 z-10">
               <NavBar options={NavBarOptions} />
